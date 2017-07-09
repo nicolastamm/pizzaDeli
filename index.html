@@ -1,0 +1,372 @@
+<!--@Author Nicolas Andreas Tamm Garetto ; Artuk Kakhorov-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+	<title>Interaktive Systeme - Template</title>
+	<link href="css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="header">
+		<div class="headerTitle">
+			Easy Peasy Pizza
+		</div>
+		<div>
+			<img class ="pizzaLogo" src="images/pizzalogo.png" height="200px" width="200px">
+		</div>
+	</div>
+	<table class="pageBar">
+		<tr>
+			<td>Home </a></td>
+			<td>Address </a></td>
+			<td>About us </a></td>
+			<td style="-moz-user-select: none; color: #330000; cursor: default;"> Bananaaaaaa :P </td>
+		</tr>
+	</table>
+
+	<table class="wizard">
+		<tr>
+			<td><div class="wizardNodeActive"   id="basicsWizard"> <img src="images/doughBasic.png" height="50px" width="50px" style="filter: invert(100%)">  </div></td>
+			<td><div class="wizardNodeInactive" id="toppingsWizard"> <img src="images/toppingsHand.png" height="50px" width="50px" style="filter: invert(100%)"> </div></td>	
+			<td><div class="wizardNodeInactive" id="overviewWizard"> <img src="images/pizzaOverview.png" height="50px" width="50px" style="filter: invert(100%)"> </div></td>
+			<td><div class="wizardNodeInactive" id="feedbackWizard"> <img src="images/handOk.png" height="50px" width="50px" style="filter: invert(100%)"> </div></td>
+		</tr>
+		<tr style="font-size: 120%;">
+			<td>1 Basics </td>
+			<td>2 Toppings </td>
+			<td>3 Overview </td>
+			<td>4 Feedback </td>
+		</tr>
+	</table>
+	<div class="mainBody">	
+		<div id="costList">
+			<div class ="mainBodyHeader">
+				Total Sum
+			</div>
+			<div class="mainBodyHeaderNumber">
+				$
+			</div>
+			<table id="sumSheet">
+				<tr>
+					<td> Size: </td>
+					<td> 0.00</td>
+				</tr>
+				<tr>
+					<td> Dough: </td>
+					<td> 0.00</td>
+				</tr>
+				<tr>
+					<td> Sauce: </td>
+					<td> 0.00</td>
+				</tr>
+				<tr>
+					<td> Toppings: </td>
+					<td> 0.00</td>
+				</tr>
+				<tr>
+					<td> Total: </td>
+					<td> 0.00</td>
+				</tr>
+			</table>
+		</div>
+		<div class="selectedToppings">
+			<div class="mainBodyHeader" style="text-align:left">Selected Toppings</div>
+			<div class="mainBodyHeaderNumber">
+				T
+			</div>
+			<table class="selectedToppingsTable">
+				<tr>
+					<td><img id="selected1" class="selectedIm" src="images/tomato.png"> </td>
+					<td><img id="selected2" class="selectedIm" src="images/mushroom.png"></td>
+					<td><img id="selected3" class="selectedIm" src="images/ananas.png"></td>
+				<tr>
+				<tr>
+					<td><img id="selected4" class="selectedIm" src="images/shark.png"></td>
+					<td><img id="selected5" class="selectedIm" src="images/gold.png"> </td>
+					<td><img id="selected6" class="selectedIm" src="images/salami.png"></td>
+				<tr>
+				<tr>
+					<td><img id="selected7" class="selectedIm" src="images/tor.png"></td>
+					<td><img id="selected8" class="selectedIm" src="images/souls.png"></td>
+					<td><img id="selected9" class="selectedIm" src="images/cheese.png"></td>
+				<tr>
+			</table>
+		</div> 
+		<div id="basics">
+			<div class="mainBodyHeader">
+				Basics
+			</div>
+			<div class="mainBodyHeaderNumber">
+				1
+			</div>
+			<div class="mainBodyBody">
+				<div class="optionTitle">
+					Size:
+				</div>
+				<form>
+					<input class="sizeRadio" name="size" type="radio" value="small" onclick="pizzaSize()"> Small
+					<input class="sizeRadio" name="size" type="radio" value="medium" onclick="pizzaSize()"> Medium
+					<input class="sizeRadio" name="size" type="radio" value="large" onclick="pizzaSize()" checked> Large
+				</form>
+				<div id="imageBox">
+					<img id="sizePreviewIm" src="images/pizzablack.png">
+				</div>
+				<hr>
+				<div class="optionTitle">
+					Dough:
+				</div>
+				<form>
+					<input class="doughRadio" name="dough" type="radio" value="normal" onclick="doughType()" checked>Wheat
+					<input class="doughRadio" name="dough" type="radio" value="spelt" onclick="doughType()">Spelt 
+				</form>
+				<div id="imageBox" style="border-radius: 25%">
+					<img id="doughPreviewIm" src="images/wheatDough.png">
+				</div>
+				<hr>
+				<div class="optionTitle">
+					Sauce:
+				</div>
+				<form>
+					<input class="sauceRadio" name="sauce" type="radio" value="basil" onclick="sauceType()"checked>Basil
+					<input class="sauceRadio" name="sauce" type="radio" value="garlic" onclick="sauceType()"> Garlic
+					<input class="sauceRadio" name="sauce" type="radio" value="spicy" onclick="sauceType()" >Spicy
+				</form>
+				<div id="imageBox" style="border-radius: 25%">
+					<img id="saucePreviewIm" src="images/basilBottle.png">
+				</div>
+				<hr>
+			</div>
+		</div>
+		<div id="toppings">
+			<div class="mainBodyHeader">
+				Toppings
+			</div>
+			<div class="mainBodyHeaderNumber">
+				2
+			</div>
+			<div class="mainBodyBody">
+				<div class="optionTitle">
+					Select your prefered Toppings:
+				</div>
+				<div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="tomatoIm" class="toppingsImage" src="images/tomato.png">
+							Tomatoes <br> +0.50$
+							<button id="add1" class="addButton" onclick="addTopping('1')">
+									+
+							</button>
+							<button id="remove1" class="removeButton" onclick="removeTopping('1')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="mushroomIm"class="toppingsImage" src="images/mushroom.png">
+							Champignons +0.50$
+							<button id="add2" class="addButton" onclick="addTopping('2')">
+									+
+							</button>
+							<button id="remove2" class="removeButton" onclick="removeTopping('2')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="ananasIm" class="toppingsImage" src="images/ananas.png">
+							Ananas <br> +1.00$
+							<button id="add3" class="addButton" onclick="addTopping('3')">
+									+
+							</button>
+							<button id="remove3" class="removeButton" onclick="removeTopping('3')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="sharkIm" class="toppingsImage" src="images/shark.png">
+							Shark Fin <br> +11.37$
+							<button id="add4" class="addButton" onclick="addTopping('4')">
+									+
+							</button>
+							<button id="remove4" class="removeButton" onclick="removeTopping('4')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="goldIm" class="toppingsImage" src="images/gold.png">
+							Edible Gold <br> +0.05$
+							<button id="add5" class="addButton" onclick="addTopping('5')">
+									+
+							</button>
+							<button id="remove5" class="removeButton" onclick="removeTopping('5')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="salamiIm"class="toppingsImage" src="images/salami.png">
+							Salami <br> +0.50$
+							<button id="add6" class="addButton" onclick="addTopping('6')">
+									+
+							</button>
+							<button id="remove6" class="removeButton" onclick="removeTopping('6')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="torIm" class="toppingsImage" src="images/tor.png">
+							Tor Browser<br> Its Free!
+							<button id="add7" class="addButton" onclick="addTopping('7')">
+									+
+							</button>
+							<button id="remove7" class="removeButton" onclick="removeTopping('7')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="soulsIm" class="toppingsImage" src="images/souls.png">
+							Dark Souls <br> +0.75$
+							<button id="add8" class="addButton" onclick="addTopping('8')">
+									+
+							</button>
+							<button id="remove8" class="removeButton" onclick="removeTopping('8')">
+									-
+							</button>
+						</div>
+					</div>
+					<div class="toppingsSquare">
+						<div class="toppingsContent">
+							<img id="cheeseIm" class="toppingsImage" src="images/cheese.png">
+							Extra Cheese <br> +0.50$
+							<button id="add9" class="addButton" onclick="addTopping('9')">
+									+
+							</button>
+							<button id="remove9" class="removeButton" onclick="removeTopping('9')">
+									-
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="overview">
+			<div class="mainBodyHeader">
+				Overview
+			</div>
+			<div class="mainBodyHeaderNumber">
+				3
+			</div>
+			<div class="mainBodyBody">
+				<span id="basicsOverview"> </span>
+				<hr>
+				<div class="optionTitle">
+					Where should the Pizza be sent?
+				</div>
+				<form>
+					<input class="DatenRadio" name="DatenRadio" type="radio" onchange="checkDaten();" value="benutzerDaten"> Send to "musterstrasse 42, Bielefeld"
+						<br>
+					<input class="DatenRadio" name="DatenRadio" type="radio" onchange="checkDaten();" value="neueDaten" checked> New address
+						<br>
+					<div id="Datenumgebung">
+						<div class="form-inline">
+								<br>
+							<label>Adress </label>
+								<br>
+							<input class="form-control" id="std" type="text" placeholder="City" style="width:40%;">
+							<input class="form-control" id="plz" type="text" placeholder="ZIP" style="width:40%;">
+								<br>
+								<br>
+							<input class="form-control" id="str" type="text" placeholder="Street" style="width:60%;">
+							<input class="form-control" id="strn" type="text" placeholder="Nr." style="width:20%;">
+								<br>
+								<br>
+						</div>
+					</div>
+				</form>	
+			</div>
+		</div>
+		<div id="feedback">
+			<div class="mainBodyHeader">
+				Feedback
+			</div>
+			<div class="mainBodyHeaderNumber">
+				4
+			</div>
+			<div class="mainBodyBody">
+				<h4 style="font-family: verdana; font-weight: bolder;text-align: center;"> 
+					Your order has been succesfully processed!</h4>
+				<h4 style="font-family: verdana; font-weight: bolder;text-align: center;">
+					Estimated arrival in:</h1>		
+				<h5 style="font-family: verdana; font-weight: bolder; text-align: center;" id="demo1"></h1>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+						<div class="modal-content" style="background-color: #800000;">
+						  <div class="modal-header" style="background-color: #330000; color: white;" >
+							<h3 style="text-align: center;"class="modal-title" id="exampleModalLabel">Pizza ist da !!!</h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						  </div> 
+						 <div class="modal-body" style="text-align: center;">
+							<img src="https://media.giphy.com/media/tEQVq5ASc6CcM/giphy.gif">
+						 </div>
+						 <div class="modal-footer" style="background-color: #330000;">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>	
+					</div>
+				</div>
+			</div>
+				<div class="optionTitle">
+					<div id="road">
+						<div class="container-fluid">
+							<div class="row" id="row">
+									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+										<div>
+											<img style="width: 100px; height: 100px;" src="images/offen.png">
+										</div>
+									</div>
+									
+									<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+										<div class="auto" style="width: 40px; height: 40px;position: relative; margin-top: 30px;">
+											<img style="width: 40px; height: 40px;" src="images/dron.png">
+										</div>
+									</div>
+								
+								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+									<div>
+									<img style="width: 100px; height: 100px;" src="images/haus.png">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="buttonGroup">
+			<button align="right" class="nextPrevious" id="previous"onclick="previousButton()"> Previous </button> 
+			<button align="right" class="nextPrevious" id="next" onclick="checkStage()"> Next </button> 
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+			crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>

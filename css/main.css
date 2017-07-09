@@ -1,0 +1,390 @@
+/*@Author Nicolas Andreas Tamm Garetto ; Artuk Kakhorov */
+html, body {
+	font-family: 'Helvetica Neue', sans-serif;
+	background-color: #f9f9eb !important;
+}
+ul {
+  list-style-type: none;
+}
+hr
+{
+	border: 0;
+	height: 0;
+	box-shadow: 0 0 10px 1px #28280b;
+} 
+.header
+{
+	background-color: #800000;
+	color: #fff;
+	width: 100%;
+}
+.headerTitle
+{
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 300%;
+	padding-top: 20px;
+	text-align: center;
+	user-select: none;
+	-moz-user-select:none;
+}
+.pizzaLogo
+{
+	background-color: #800000;
+	position: absolute;
+	border: 4px solid #eee;
+	border-radius: 50%;
+	right:0px;
+	top:0px;
+	height:200px;
+	width:200px;
+	padding: 10px;
+	z-index:5;
+}
+.pageBar
+{
+	top: 100px;
+	width: 100%;
+	z-index: 4;
+	background-color: #330000;
+	color: white;
+	margin-right: 500px;
+	text-align:center;
+	font-size: 150%;
+	cursor: pointer;
+}
+.mainBody
+{
+	
+	padding: 50px 100px 0px 100px;
+	width: 100%;
+	
+
+}
+.mainBodyHeader
+{
+	background-color:#330000;
+	color:white;
+	font-size: 150%;
+	z-index: 4;
+	padding-left: 50px;
+	
+}
+.mainBodyHeaderNumber
+{
+	position: relative;
+	bottom: 35px;
+	width: 40px;
+	border: 0px solid #000;
+	border-radius: 10%;
+	background-color: #800000;
+	color: white;
+	text-align:center;
+	font-size: 200%;
+	z-index:5;
+}
+.mainBodyBody
+{
+	height:90%;
+	color: #28280b;
+	background-color:  #f5f5dc;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#basics , #toppings , #overview , #feedback
+{
+	width: 450px;
+	float: left;
+	background-color:#f5f5dc;
+}
+#toppings, #overview , #feedback
+{
+	display:none;
+}
+.optionTitle
+{
+	font-size: 150%;
+}
+#imageBox
+{
+	position: relative;
+	top: 10px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	width: 225px;
+	height: 225px;
+	border: 5px solid #28280b;
+	border-radius: 50%;
+}
+#sizePreviewIm , #doughPreviewIm , #saucePreviewIm
+{
+	height: 200px;
+	width: 200px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-100px;
+	margin-left:-100px;
+	
+}
+#euro
+{
+	width: 20px;
+	height: 20px;
+}
+#costList , .selectedToppings
+{
+	position: fixed;
+	width: 25%;
+	left: 600px;
+}
+.selectedToppings
+{
+	top: 500px;
+	display: none;
+}
+.selectedToppingsTable
+{
+	margin: 2% auto;
+	
+}
+.selectedIm
+{
+	width: 60px;
+	height: 80px;
+	margin: 2%;
+	opacity: 0.1;
+}
+#sumSheet
+{
+	background-color: #f5f5dc;
+	font-size: 150%;
+	width:100%;
+}
+	#sumSheet > tbody > tr > td:nth-child(1)
+	{
+		padding-left: 20px;
+		text-align: left;
+	}
+	#sumSheet > tbody > tr > td:nth-child(2)
+	{
+		text-align: right;
+		padding-right: 20px;
+	}
+	#sumSheet >tbody > tr:nth-child(odd)
+	{
+		background-color: #eeeec3;
+	}
+	#sumSheet >tbody > tr:last-child
+	{
+		background-color: #e3e39c;
+	}
+.wizard
+{
+	position: relative;
+	top: 10px;
+	width: 50%;
+	margin: auto;
+}
+	.wizard > tbody > tr > td , .pageBar > tbody > tr > td
+	{
+		width:25%;
+	}
+.wizardNodeActive , .wizardNodeSuccess , .wizardNodeError , .wizardNodeInactive
+{
+	display: table-cell;
+	color: white;
+	background-color:  #cc0000;
+	font-size: 330%;
+	text-align: center;
+	border: 0px solid #fff;
+	border-radius: 50%;
+	width:65px;
+	user-select: none;
+	-moz-user-select:none;
+}
+.wizardNodeInactive
+{
+	background-color: #555;
+}
+.wizardNodeSuccess
+{
+	background-color: #4CAF50;
+}
+.wizardNodeError
+{
+	background-color: #f4511e;
+}
+.buttonGroup
+{
+	position:fixed;
+	bottom: 5%;
+	right: 10%;
+}
+.nextPrevious 
+{
+	position:relative;
+	margin-top: 450px;
+	padding: 10px 20px;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: #800000;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+	bottom: 10%;
+}
+.nextPrevious:hover {background-color: #330000}
+
+.nextPrevious:active 
+{
+	background-color: #330000;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+#previous
+{
+	display:none;
+}
+.toppingsRaster
+{
+	background-color:#f5f5dc;
+}
+.toppingsSquare
+{
+	float:left;
+	position: relative;
+	width: 30%;
+	padding-bottom: 35%;
+	margin:1.66%;
+	overflow:hidden;	
+	background-color:#f5f5dc;
+}
+.toppingsContent
+{
+	position:absolute;
+	height: 80%;
+	width: 90%;
+	padding: 5%;
+	text-align:center;
+	opacity: 0.8;
+}
+.toppingsContent:hover
+{
+	opacity: 1.0;
+		-webkit-animation: pulsate-fwd 0.5s ease-in-out both;
+			animation: pulsate-fwd 0.5s ease-in-out both;
+
+}
+.toppingsContent:hover .addButton , .toppingsContent:hover .removeButton
+{
+	opacity: 1.0;
+}
+.toppingsSquare .toppingsImage  
+{
+	width: 200px;
+	height: 150px;
+    max-height:90%;
+    max-width:100%;
+}
+.addButton , .removeButton
+{
+	position: absolute;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	box-shadow: 0 4px #999;
+}
+.addButton
+{
+	background-color: #4CAF50;
+	top: 10px;
+	right: -10px;
+	padding: 1px 6px;
+	font-size: 15px;
+	opacity: 0.0;
+}
+.removeButton
+{
+	top: 50px;
+	right: -10px;
+	padding: 2px 8px;
+	background-color: #CC0000;
+	font-size: 15px;
+	opacity:0.0;
+	display:none;
+}
+.addButton:hover {background-color: #3e8e41}
+.removeButton:hover {background-color: #330000}
+.addButton:active 
+{
+	background-color: #3e8e41;
+	box-shadow: 0 1px #666;
+	transform: translateY(4px);
+}
+.removeButton:active
+{
+	background-color:#330000;
+	box-shadow: 0 1px #666;
+	transform: translateY(4px);
+}
+
+#road 
+{
+		height:100px;
+		width: 100%;
+}
+#row 
+{
+	margin-top:10px;
+}
+#basicsOverview
+{
+	font-weight: thick;
+	font-size: 125%;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2017-6-17 16:50:46
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation pulsate-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
